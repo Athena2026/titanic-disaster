@@ -1,0 +1,12 @@
+# Ignore data files
+src/data/
+
+# Python cache files
+*.pyc
+__pycache__/
+
+# macOS hidden files
+.DS_Store
+
+# Virtual environment (optional)
+venv/
