@@ -92,6 +92,19 @@ print("\nPredicting on test dataset...")
 y_test_pred = model.predict(X_test)
 print("First 10 predictions:", y_test_pred[:10])
 
+print("\nPredicting on test dataset...")
+y_test_pred = model.predict(X_test)
+
+# Save predictions to a CSV file
+output_df = pd.DataFrame({
+    'PassengerId': test_df['PassengerId'],
+    'Survived': y_test_pred
+})
+output_path = "src/data/test_predictions.csv"
+output_df.to_csv(output_path, index=False)
+print(f"Test predictions saved to {output_path}")
+
+
 # -----------------------
 # Print summary statistics
 # -----------------------
