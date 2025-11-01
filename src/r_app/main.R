@@ -174,6 +174,15 @@ print(pred_table)
 cat(sprintf("Survival rate: %.2f%%\n", 
             pred_table["1"] / sum(pred_table) * 100))
 
+# Save predictions to CSV
+output_df <- data.frame(
+  PassengerId = test_df$PassengerId,
+  Survived = y_test_pred
+)
+output_path <- "src/data/test_predictions_r.csv"
+write.csv(output_df, output_path, row.names = FALSE)
+cat("Test predictions saved to", output_path, "\n")
+
 # =============================================================================
 # COMPARISON WITH SAMPLE SUBMISSION
 # =============================================================================
